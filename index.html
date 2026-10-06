@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maze Runner</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0a0a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Courier New', monospace;
+  color: #e0e0ff;
+  overflow: hidden;
+}
+#game-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+h1 {
+  font-size: 1.4em;
+  color: #7b8cff;
+  text-shadow: 0 0 10px rgba(123,140,255,0.5);
+  letter-spacing: 2px;
+}
+#hud {
+  display: flex;
+  gap: 24px;
+  font-size: 0.95em;
+  color: #a0a8ff;
+}
+#hud span { margin: 0 8px; }
+canvas {
+  border: 2px solid #334;
+  background: #111122;
+  box-shadow: 0 0 20px rgba(80,90,180,0.3);
+}
+#message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6em;
+  color: #ffeb7b;
+  text-shadow: 0 0 15px rgba(255,235,123,0.7);
+  display: none;
+  z-index: 10;
+  text-align: center;
+}
+#controls {
+  font-size: 0.8em;
+  color: #666890;
+  margin-top: 4px;
+}
+</style>
+</head>
+<body>
+<div id="game-container">
+  <h1>MAZE RUNNER</h1>
+  <div id="hud">
+    <div>Star: <span id="stars">0</span>/<span id="total-stars">5</span></div>
+    <div>Level: <span id="level">1</span></div>
+    <div>Time: <span id="timer">0</span>s</div>
+  </div>
+  <canvas id="maze" width="480" height="480"></canvas>
+  <div id="message"></div>
+  <div id="controls">Arrow keys or WASD to move | Collect all stars to advance</div>
+</div>
+<script src="src/game.js"></script>
+</body>
+</html>
